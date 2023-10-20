@@ -1,0 +1,138 @@
+import 'package:flutter/material.dart';
+class reg extends StatefulWidget {
+  const reg({super.key});
+
+  @override
+  State<reg> createState() => _regState();
+}
+
+class _regState extends State<reg> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Center(
+          child: Text("Sign Up",style: TextStyle(fontSize: 30,fontWeight:
+          FontWeight.bold),),
+        ),
+      ),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 50,
+              width: 380,
+              child: TextFormField(
+                decoration: InputDecoration(
+                  hintText: 'Email',
+                  border: OutlineInputBorder(),
+
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 50,
+              width: 400,
+              child: TextFormField(
+                decoration: InputDecoration(
+                  hintText: 'Create password',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 50,
+              width: 380,
+              child: TextFormField(
+                decoration: InputDecoration(
+                  hintText: 'Confirm password',
+                  border: OutlineInputBorder(),
+                ),
+
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 70,
+            width: 390,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(onPressed: (){
+
+              }, style: ElevatedButton.styleFrom(backgroundColor:
+              Colors.blue,shape: RoundedRectangleBorder(),),
+                  child: Text('Sign Up',style: TextStyle(
+                    color: Colors.white
+                  ),)),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 70),
+            child: Row(
+              children: [
+                Text("Already have an account?"),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("Login",style: TextStyle(
+                    color: Colors.blue
+                  ),),
+                )
+              ],
+            ),
+          ),
+         Padding(
+           padding: const EdgeInsets.only(left: 30,top: 20),
+           child: Row(
+             children: [
+               Padding(
+                 padding: const EdgeInsets.all(8.0),
+                 child: Container(
+                   height: 30,
+                   width: 150,
+                   child: Divider(
+                     color: Colors.black54,
+                   ),
+                 ),
+               ),
+               Text("Or"),
+               Padding(
+                 padding: const EdgeInsets.all(8.0),
+                 child: Container(
+                   height: 10,
+                   width: 150,
+                   child: Divider(
+                     color: Colors.black54,
+
+                   ),
+                 ),
+               )
+             ],
+           ),
+         ),
+          SizedBox(
+            height: 50,
+            width: 380,
+            child: ElevatedButton(onPressed: (){
+
+            },style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.indigoAccent,
+              shape: RoundedRectangleBorder()
+            ),
+                child: Text("Login with Facebook",style: TextStyle(
+                  color: Colors.white
+                ),)),
+          )
+        ],
+      ),
+
+
+    );
+  }
+}
