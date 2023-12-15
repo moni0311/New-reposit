@@ -1,0 +1,4 @@
+storePassword=ott1234
+keyPassword=ott1234
+keyAlias=upload
+storeFile=C:\Users\Classic\StudioProjects\calculator\android\upload-keystore.jks
