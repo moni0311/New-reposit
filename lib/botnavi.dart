@@ -31,12 +31,14 @@ class _BotnaviState extends State<Botnavi> {
 
 
   ];
+final pages1=[
 
+];
 
-  void tap(index)
+  void tap(index1)
   {
     setState(() {
-      _index = index;
+      _index = index1;
     });
   }
 
@@ -58,13 +60,17 @@ class _BotnaviState extends State<Botnavi> {
 
             BottomNavigationBarItem(icon: Icon(Icons.settings,color: Colors.black,),label: 'profile'),
 
+
           ],
           currentIndex: _index,
           onTap: tap,
         ),
       ),
+
+
     );
   }
 }
+
 
 

@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "1018393279405",
-    "project_id": "crucial-axon-394107",
-    "storage_bucket": "crucial-axon-394107.appspot.com"
+    "project_number": "111823306158",
+    "project_id": "my-firebase-1-f046d",
+    "storage_bucket": "my-firebase-1-f046d.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1018393279405:android:d2bd1e683292b98e6b7f24",
+        "mobilesdk_app_id": "1:111823306158:android:b63f01245481c6a67e5c3f",
         "android_client_info": {
-          "package_name": "com.example.untitled1"
+          "package_name": "com.ott.gtsotware"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBSFjeo6cXUs59HEE1xSmve4YDR71rswEw"
+          "current_key": "AIzaSyD3K8Lbtehwp3njty0aUozyiVDOoe3u66k"
         }
       ],
       "services": {

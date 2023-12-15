@@ -22,6 +22,7 @@ class _ctrlState extends State<ctrl> {
                 height: 100,
                 width: 100,
                 decoration: BoxDecoration(
+                  border: Border.all(),
                   color: Colors.orange,
                   // border: Border.all()
                 ),
@@ -31,7 +32,8 @@ class _ctrlState extends State<ctrl> {
             setState(() {
              clk=!clk;
             });
-          }, child: Text("Submit"))
+          }, child: Text("Submit")),
+
 
 
 

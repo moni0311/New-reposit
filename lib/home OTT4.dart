@@ -2,9 +2,19 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:untitled1/Search%20ott1.1.dart';
+import 'package:untitled1/desc%20OTT%205.dart';
+import 'package:untitled1/my%20space.dart';
+import 'package:untitled1/newhot%20OTT%203.1.dart';
+import 'package:video_player/video_player.dart';
+import 'package:flick_video_player/flick_video_player.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 
-import 'colors.dart';
+
+
+import 'Model.dart';
+import 'download ott.dart';
 
 class home extends StatefulWidget {
   const home({super.key});
@@ -15,7 +25,24 @@ class home extends StatefulWidget {
 }
 
 class _AState extends State<home> {
-  get index =>null;
+  late FlickManager flickManager;
+
+
+  //
+  @override
+  void initState(){
+    super. initState();
+    flickManager=FlickManager(
+      videoPlayerController:
+      VideoPlayerController.network("https://new-status-video.com/wp-content/uploads/2023/07/yt1s.com-Jailer-Efx-whatsapp-statusThalaivar-massrajinikanth-jailer.mp4")
+    );
+
+  }
+  @override
+  void dispose() {
+    flickManager.dispose();
+    super.dispose();
+  }
 
   
   @override
@@ -49,30 +76,27 @@ class _AState extends State<home> {
                   autoPlayCurve: Curves.fastOutSlowIn,
                   enlargeCenterPage:true,
                   enlargeFactor: 0.15,
-                  // onPageChanged: callbackFunction,
                   scrollDirection: Axis.horizontal,
                   enlargeStrategy: CenterPageEnlargeStrategy.height,
                 ),
-                itemCount: list1.length,
+                // itemCount: list1.length,
+                  itemCount: 1,
                 itemBuilder: (BuildContext context, int index, int)  {
-
-                  return FittedBox(
-                    fit: BoxFit.cover,
-                    child: Container(
-                                height: 200,
-                                decoration: BoxDecoration(
-                                  color: Colors.orange,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: Image.network(list1[index].image,fit: BoxFit.fill,)
-                            ),
-                  );}
+                  return Container(
+                    child: FlickVideoPlayer(
+                      flickManager: flickManager,
+                    ),
+                  );
+                }
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 130,top: 20),
                 child: SizedBox(
                   width: 170,
-                  child: ElevatedButton(onPressed: (){},
+                  child: ElevatedButton(onPressed: (){
+                    Navigator.push(context,
+                    MaterialPageRoute(builder:(context)=>desc() ));
+                  },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white12,shape: RoundedRectangleBorder(),
 
@@ -189,16 +213,70 @@ class _AState extends State<home> {
                         );
                       }
                   )
-
-
-
-
-
               ),
-          ],
+            ],
         ),
     ),
     ),
+        bottomNavigationBar:  BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: Color(0xFF6200EE),
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.white.withOpacity(.60),
+          selectedFontSize: 14,
+          unselectedFontSize: 14,
+          onTap: (value) {
+            // Respond to item press.
+          },
+          items: [
+            BottomNavigationBarItem(
+
+              icon: GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>search()));
+                },
+                  child: Icon(Icons.home)),
+              label: 'Home',
+
+            ),
+            BottomNavigationBarItem(
+
+              icon: Container(
+                  child: GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const search()));
+                    },
+                      child: Icon(Icons.search))),
+              label: 'Search',
+            ),
+            BottomNavigationBarItem(
+
+                icon: Container(
+                  
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>newhot()));
+                      },
+                        child: Icon(Icons.video_library))),
+                label: 'New'
+            ),
+            BottomNavigationBarItem(
+
+                icon: GestureDetector(
+                  onTap: (){
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>down()));
+    },
+                    child: Icon(Icons.file_download_outlined)),
+                label: 'Downloads'
+            ),
+            BottomNavigationBarItem(icon: GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>setting()));
+              },
+                child: Icon(Icons.person)),
+            label: 'My profile')
+          ],
+        )
     );
 
   }

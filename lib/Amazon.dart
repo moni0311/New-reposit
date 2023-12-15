@@ -20,7 +20,7 @@ class _AMsState extends State<AMs> {
       appBar: AppBar(
         backgroundColor: Colors.cyan,
         title: Container(
-          height: 50,
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             height: 50,
           width: 400,
           decoration: BoxDecoration(
             color: Colors.white,

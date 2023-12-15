@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+// import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:untitled1/Amazon.dart';
 
 
@@ -50,7 +50,7 @@ class _PDState extends State<PD> {
             padding: const EdgeInsets.only(top: 01),
             child: Container(
               height: 40,
-              width: 400,
+              width: double.infinity,
               decoration: BoxDecoration(
                 color: Colors.white,
               ),
@@ -107,26 +107,26 @@ class _PDState extends State<PD> {
 
                       height: 10,
                       width: 120,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 20, bottom: 20),
-                        child: RatingBar.builder(
-                          initialRating: 3,
-
-                          minRating: 1,
-                          direction: Axis.horizontal,
-                          allowHalfRating: true,
-                          itemCount: 5,
-                          itemSize: 20,
-                          itemBuilder: (context, _) =>
-                              Icon(
-                                Icons.star,
-                                color: Colors.amber,
-                              ),
-                          onRatingUpdate: (rating) {
-                            print(rating);
-                          },
-                        ),
-                      ),
+                      // child: Padding(
+                      //   padding: const EdgeInsets.only(left: 20, bottom: 20),
+                      //   child: RatingBar.builder(
+                      //     initialRating: 3,
+                      //
+                      //     minRating: 1,
+                      //     direction: Axis.horizontal,
+                      //     allowHalfRating: true,
+                      //     itemCount: 5,
+                      //     itemSize: 20,
+                      //     itemBuilder: (context, _) =>
+                      //         Icon(
+                      //           Icons.star,
+                      //           color: Colors.amber,
+                      //         ),
+                      //     onRatingUpdate: (rating) {
+                      //       print(rating);
+                      //     },
+                      //   ),
+                      // ),
 
 
                     ),
@@ -149,7 +149,7 @@ class _PDState extends State<PD> {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 5),
                   child: Text(
-                      "Lavi Sport Lino Large Size 63cms Wheel Duffle Bag ForLavi Sport Lino Large Size 63cms Wheel Duffle Bag For",
+                      "Lavi Sport Lino Large Size 63cms Wheel Duffle Bag ForLavi Sport Lino Large Size 63cms Wheel Duffle Bag ",
                   overflow: TextOverflow.ellipsis,
                   ),
                 )
@@ -285,7 +285,7 @@ class _PDState extends State<PD> {
                 Text("Saturday,23 September.",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
                 Text("Details",
-                  style: TextStyle(color: Colors.teal, fontSize: 15),),
+                  style: TextStyle(color: Colors.teal, fontSize: 12),),
               ],
             ),
             Row(

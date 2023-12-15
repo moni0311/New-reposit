@@ -1,6 +1,9 @@
+import 'package:flick_video_player/flick_video_player.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled1/colors.dart';
+import 'package:untitled1/Model.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:untitled1/home%20OTT4.dart';
+import 'package:video_player/video_player.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 
@@ -12,6 +15,27 @@ class desc extends StatefulWidget {
 }
 
 class _descState extends State<desc> {
+  late FlickManager flickManager;
+
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   flickManager = FlickManager(
+  //       videoPlayerController:
+  //       VideoPlayerController.network(
+  //         "https://youtube.com/shorts/Co_LHG4JKpQ?si=E8WQAJ_pTZZXQXAV"
+  //
+  //   ),
+  //   );
+  // }
+  @override
+  void dispose() {
+    flickManager.dispose();
+    super.dispose();
+  }
+
+
+
 
   YoutubePlayerController _controller = YoutubePlayerController(
     initialVideoId: 'vnprCkjMitY',
@@ -23,6 +47,7 @@ class _descState extends State<desc> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -34,8 +59,29 @@ class _descState extends State<desc> {
         child: SingleChildScrollView(
           child: Column(
             children: [
+              // GestureDetector(
+              //   onTap: (){
+              //     setState(() {
+              //       Navigator.push(context, MaterialPageRoute(builder: (context)=>home()));
+              //     });
+              //   },
+              // ),
+              InkWell(
+                onTap: (){
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => home()),
+                    );
+
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 360),
+                  child: Icon(
+                    Icons.arrow_back,color: Colors.white,),
+                ),
+              ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.only(top: 10),
                 child: Container(
                   height: 260,
                   width: 550,
@@ -161,6 +207,12 @@ class _descState extends State<desc> {
                   color: Colors.white
                 ),),
               ),
+      //     Container(
+      // child: FlickVideoPlayer(
+      // flickManager: flickManager,
+      // ),
+      //
+      //     ),
               Container(
                 height: 400,
                 child:YoutubePlayer(

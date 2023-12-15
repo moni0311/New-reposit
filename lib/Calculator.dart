@@ -420,7 +420,8 @@ bool click=false;
                     if (optr=='√')
                       {
                       double a = double.parse(num2);
-                       double res=sqrt(a);
+                      //double res=sqrt(a);
+                     num res= pow (a,1/2);
                        textt.text= res.toString();
 
 
